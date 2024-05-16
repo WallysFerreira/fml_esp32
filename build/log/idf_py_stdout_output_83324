@@ -1,0 +1,12 @@
+[0/1] Re-running CMake...
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32c6
+Processing 4 dependencies:
+[1/4] espressif/esp_websocket_client (1.2.3)
+[2/4] espressif/jsmn (1.1.0)
+[3/4] espressif/led_strip (2.5.3)
+[4/4] idf (5.2.1)
+-- Configuring incomplete, errors occurred!
+FAILED: build.ninja 
+/usr/bin/cmake --regenerate-during-build -S/home/wallys/esp/hello_world -B/home/wallys/esp/hello_world/build

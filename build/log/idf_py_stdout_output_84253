@@ -1,0 +1,77 @@
+[0/1] Re-running CMake...
+-- git rev-parse returned 'fatal: not a git repository (or any of the parent directories): .git'
+-- Could not use 'git describe' to determine PROJECT_VER.
+-- Building ESP-IDF components for target esp32c6
+Manifest files have changed, solving dependencies.
+..........Updating lock file at /home/wallys/esp/hello_world/dependencies.lock
+Processing 5 dependencies:
+[1/5] espressif/esp_websocket_client (1.2.3)
+[2/5] espressif/jsmn (1.1.0)
+[3/5] espressif/json_parser (1.0.3)
+[4/5] espressif/led_strip (2.5.3)
+[5/5] idf (5.2.1)
+-- Project sdkconfig file /home/wallys/esp/hello_world/sdkconfig
+-- App "hello_world" version: 1
+-- Adding linker script /home/wallys/esp/hello_world/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_system/ld/esp32c6/sections.ld.in
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.api.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.rvfp.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.newlib.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.version.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.phy.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.coexist.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.net80211.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.pp.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.wdt.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.newlib-normal.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.heap.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/soc/esp32c6/ld/esp32c6.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_bootloader_format esp_coex esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_mm esp_netif esp_netif_stack esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump espressif__esp_websocket_client espressif__jsmn espressif__json_parser espressif__led_strip esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash nvs_sec_provider openthread partition_table protobuf-c protocomm pthread riscv sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant
+-- Component paths: /home/wallys/esp/esp-idf/components/app_trace /home/wallys/esp/esp-idf/components/app_update /home/wallys/esp/esp-idf/components/bootloader /home/wallys/esp/esp-idf/components/bootloader_support /home/wallys/esp/esp-idf/components/bt /home/wallys/esp/esp-idf/components/cmock /home/wallys/esp/esp-idf/components/console /home/wallys/esp/esp-idf/components/cxx /home/wallys/esp/esp-idf/components/driver /home/wallys/esp/esp-idf/components/efuse /home/wallys/esp/esp-idf/components/esp-tls /home/wallys/esp/esp-idf/components/esp_adc /home/wallys/esp/esp-idf/components/esp_app_format /home/wallys/esp/esp-idf/components/esp_bootloader_format /home/wallys/esp/esp-idf/components/esp_coex /home/wallys/esp/esp-idf/components/esp_common /home/wallys/esp/esp-idf/components/esp_eth /home/wallys/esp/esp-idf/components/esp_event /home/wallys/esp/esp-idf/components/esp_gdbstub /home/wallys/esp/esp-idf/components/esp_hid /home/wallys/esp/esp-idf/components/esp_http_client /home/wallys/esp/esp-idf/components/esp_http_server /home/wallys/esp/esp-idf/components/esp_https_ota /home/wallys/esp/esp-idf/components/esp_https_server /home/wallys/esp/esp-idf/components/esp_hw_support /home/wallys/esp/esp-idf/components/esp_lcd /home/wallys/esp/esp-idf/components/esp_local_ctrl /home/wallys/esp/esp-idf/components/esp_mm /home/wallys/esp/esp-idf/components/esp_netif /home/wallys/esp/esp-idf/components/esp_netif_stack /home/wallys/esp/esp-idf/components/esp_partition /home/wallys/esp/esp-idf/components/esp_phy /home/wallys/esp/esp-idf/components/esp_pm /home/wallys/esp/esp-idf/components/esp_psram /home/wallys/esp/esp-idf/components/esp_ringbuf /home/wallys/esp/esp-idf/components/esp_rom /home/wallys/esp/esp-idf/components/esp_system /home/wallys/esp/esp-idf/components/esp_timer /home/wallys/esp/esp-idf/components/esp_wifi /home/wallys/esp/esp-idf/components/espcoredump /home/wallys/esp/hello_world/managed_components/espressif__esp_websocket_client /home/wallys/esp/hello_world/managed_components/espressif__jsmn /home/wallys/esp/hello_world/managed_components/espressif__json_parser /home/wallys/esp/hello_world/managed_components/espressif__led_strip /home/wallys/esp/esp-idf/components/esptool_py /home/wallys/esp/esp-idf/components/fatfs /home/wallys/esp/esp-idf/components/freertos /home/wallys/esp/esp-idf/components/hal /home/wallys/esp/esp-idf/components/heap /home/wallys/esp/esp-idf/components/http_parser /home/wallys/esp/esp-idf/components/idf_test /home/wallys/esp/esp-idf/components/ieee802154 /home/wallys/esp/esp-idf/components/json /home/wallys/esp/esp-idf/components/log /home/wallys/esp/esp-idf/components/lwip /home/wallys/esp/hello_world/main /home/wallys/esp/esp-idf/components/mbedtls /home/wallys/esp/esp-idf/components/mqtt /home/wallys/esp/esp-idf/components/newlib /home/wallys/esp/esp-idf/components/nvs_flash /home/wallys/esp/esp-idf/components/nvs_sec_provider /home/wallys/esp/esp-idf/components/openthread /home/wallys/esp/esp-idf/components/partition_table /home/wallys/esp/esp-idf/components/protobuf-c /home/wallys/esp/esp-idf/components/protocomm /home/wallys/esp/esp-idf/components/pthread /home/wallys/esp/esp-idf/components/riscv /home/wallys/esp/esp-idf/components/sdmmc /home/wallys/esp/esp-idf/components/soc /home/wallys/esp/esp-idf/components/spi_flash /home/wallys/esp/esp-idf/components/spiffs /home/wallys/esp/esp-idf/components/tcp_transport /home/wallys/esp/esp-idf/components/ulp /home/wallys/esp/esp-idf/components/unity /home/wallys/esp/esp-idf/components/usb /home/wallys/esp/esp-idf/components/vfs /home/wallys/esp/esp-idf/components/wear_levelling /home/wallys/esp/esp-idf/components/wifi_provisioning /home/wallys/esp/esp-idf/components/wpa_supplicant
+-- Configuring done (9.2s)
+-- Generating done (0.4s)
+-- Build files have been written to: /home/wallys/esp/hello_world/build
+[1/13] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/hello_world_main.c.obj
+/home/wallys/esp/hello_world/main/hello_world_main.c: In function 'event_handler':
+/home/wallys/esp/hello_world/main/hello_world_main.c:35:28: warning: unused variable 'event' [-Wunused-variable]
+   35 |         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
+      |                            ^~~~~
+[2/13] Building C object esp-idf/espressif__json_parser/CMakeFiles/__idf_espressif__json_parser.dir/src/json_parser.c.obj
+[3/13] Linking C static library esp-idf/espressif__json_parser/libespressif__json_parser.a
+[4/13] Linking C static library esp-idf/main/libmain.a
+[5/13] Performing build step for 'bootloader'
+[0/1] Re-running CMake...
+-- Building ESP-IDF components for target esp32c6
+-- Project sdkconfig file /home/wallys/esp/hello_world/sdkconfig
+-- Adding linker script /home/wallys/esp/esp-idf/components/soc/esp32c6/ld/esp32c6.peripherals.ld
+-- Bootloader project name: "bootloader" version: 1
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.api.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.rvfp.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.newlib.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.phy.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.wdt.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/esp_rom/esp32c6/ld/esp32c6.rom.version.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/bootloader/subproject/main/ld/esp32c6/bootloader.ld
+-- Adding linker script /home/wallys/esp/esp-idf/components/bootloader/subproject/main/ld/esp32c6/bootloader.rom.ld
+-- Components: bootloader bootloader_support efuse esp_app_format esp_bootloader_format esp_common esp_hw_support esp_rom esp_system esptool_py freertos hal log main micro-ecc newlib partition_table riscv soc spi_flash
+-- Component paths: /home/wallys/esp/esp-idf/components/bootloader /home/wallys/esp/esp-idf/components/bootloader_support /home/wallys/esp/esp-idf/components/efuse /home/wallys/esp/esp-idf/components/esp_app_format /home/wallys/esp/esp-idf/components/esp_bootloader_format /home/wallys/esp/esp-idf/components/esp_common /home/wallys/esp/esp-idf/components/esp_hw_support /home/wallys/esp/esp-idf/components/esp_rom /home/wallys/esp/esp-idf/components/esp_system /home/wallys/esp/esp-idf/components/esptool_py /home/wallys/esp/esp-idf/components/freertos /home/wallys/esp/esp-idf/components/hal /home/wallys/esp/esp-idf/components/log /home/wallys/esp/esp-idf/components/bootloader/subproject/main /home/wallys/esp/esp-idf/components/bootloader/subproject/components/micro-ecc /home/wallys/esp/esp-idf/components/newlib /home/wallys/esp/esp-idf/components/partition_table /home/wallys/esp/esp-idf/components/riscv /home/wallys/esp/esp-idf/components/soc /home/wallys/esp/esp-idf/components/spi_flash
+-- Configuring done (2.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/wallys/esp/hello_world/build/bootloader
+[1/2] cd /home/wallys/esp/hello_world/build/bootloader/esp-idf/esptool_py && /home/wallys/.espressif/python_env/idf5.2_py3.12_env/bin/python /home/wallys/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/wallys/esp/hello_world/build/bootloader/bootloader.bin
+Bootloader binary size 0x54e0 bytes. 0x2b20 bytes (34%) free.
+[6/13] No install step for 'bootloader'
+[7/13] Completed 'bootloader'
+[8/13] Generating ld/sections.ld
+[9/13] Building C object CMakeFiles/hello_world.elf.dir/project_elf_src_esp32c6.c.obj
+[10/13] Linking CXX executable hello_world.elf
+[11/13] Generating binary image from built executable
+esptool.py v4.7.0
+Creating esp32c6 image...
+Merged 2 ELF sections
+Successfully created esp32c6 image.
+Generated /home/wallys/esp/hello_world/build/hello_world.bin
+[12/13] cd /home/wallys/esp/hello_world/build/esp-idf/esptool_py && /home/wallys/.espressif/python_env/idf5.2_py3.12_env/bin/python /home/wallys/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/wallys/esp/hello_world/build/partition_table/partition-table.bin /home/wallys/esp/hello_world/build/hello_world.bin
+hello_world.bin binary size 0xeb4d0 bytes. Smallest app partition is 0x100000 bytes. 0x14b30 bytes (8%) free.

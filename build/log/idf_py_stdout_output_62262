@@ -1,0 +1,75 @@
+[1/5] cd /home/wallys/esp/hello_world/build/esp-idf/esptool_py && /home/wallys/.espressif/python_env/idf5.2_py3.12_env/bin/python /home/wallys/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/wallys/esp/hello_world/build/partition_table/partition-table.bin /home/wallys/esp/hello_world/build/hello_world.bin
+hello_world.bin binary size 0xe5870 bytes. Smallest app partition is 0x100000 bytes. 0x1a790 bytes (10%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /home/wallys/esp/hello_world/build/bootloader/esp-idf/esptool_py && /home/wallys/.espressif/python_env/idf5.2_py3.12_env/bin/python /home/wallys/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/wallys/esp/hello_world/build/bootloader/bootloader.bin
+Bootloader binary size 0x54e0 bytes. 0x2b20 bytes (34%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /home/wallys/esp/esp-idf/components/esptool_py && /usr/bin/cmake -D IDF_PATH=/home/wallys/esp/esp-idf -D "SERIAL_TOOL=/home/wallys/.espressif/python_env/idf5.2_py3.12_env/bin/python;;/home/wallys/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32c6" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/home/wallys/esp/hello_world/build -P /home/wallys/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32c6 -p /dev/ttyACM0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 2MB 0x0 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.7.0
+Serial port /dev/ttyACM0
+Connecting....
+Chip is ESP32-C6 (QFN40) (revision v0.0)
+Features: WiFi 6, BT 5, IEEE802.15.4
+Crystal is 40MHz
+MAC: 40:4c:ca:ff:fe:44:86:d0
+BASE MAC: 40:4c:ca:44:86:d0
+MAC_EXT: ff:fe
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000f5fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+Compressed 21728 bytes to 13091...
+Writing at 0x00000000... (100 %)
+Wrote 21728 bytes (13091 compressed) at 0x00000000 in 0.3 seconds (effective 547.0 kbit/s)...
+Hash of data verified.
+Compressed 940144 bytes to 548156...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001d437... (5 %)
+Writing at 0x00026b18... (8 %)
+Writing at 0x0002b98e... (11 %)
+Writing at 0x00033ef9... (14 %)
+Writing at 0x0003b2da... (17 %)
+Writing at 0x00042d51... (20 %)
+Writing at 0x0004a7cd... (23 %)
+Writing at 0x000513f5... (26 %)
+Writing at 0x000580ef... (29 %)
+Writing at 0x0005ea2b... (32 %)
+Writing at 0x00065647... (35 %)
+Writing at 0x0006ba61... (38 %)
+Writing at 0x0007232f... (41 %)
+Writing at 0x000788a8... (44 %)
+Writing at 0x0007e84a... (47 %)
+Writing at 0x0008469f... (50 %)
+Writing at 0x0008a6e9... (52 %)
+Writing at 0x00090a99... (55 %)
+Writing at 0x000968f3... (58 %)
+Writing at 0x0009cb6b... (61 %)
+Writing at 0x000a2d44... (64 %)
+Writing at 0x000a9654... (67 %)
+Writing at 0x000b04b0... (70 %)
+Writing at 0x000b78bc... (73 %)
+Writing at 0x000bea53... (76 %)
+Writing at 0x000c51a7... (79 %)
+Writing at 0x000cb0ca... (82 %)
+Writing at 0x000d168e... (85 %)
+Writing at 0x000d74f8... (88 %)
+Writing at 0x000de484... (91 %)
+Writing at 0x000e4e40... (94 %)
+Writing at 0x000eb4a9... (97 %)
+Writing at 0x000f1152... (100 %)
+Wrote 940144 bytes (548156 compressed) at 0x00010000 in 4.4 seconds (effective 1716.3 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 593.7 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

@@ -1,0 +1,21 @@
+[0;33m--- esp-idf-monitor 1.4.0 on /dev/ttyACM0 115200 ---[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H ---[0m
+[0;33m0x40807f64: xPortInIsrContext at /home/wallys/esp/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:460
+[0m
+[0;33mStack dump detected[0m
+[0;33m0x4200a618: app_main at /home/wallys/esp/hello_world/main/hello_world_main.c:157
+0x4200a618: app_main at /home/wallys/esp/hello_world/main/hello_world_main.c:157
+[0m
+[0;33m0x40030dca: memset in ROM
+[0m
+[0;33m0x4200a618: app_main at /home/wallys/esp/hello_world/main/hello_world_main.c:157
+0x4200a618: app_main at /home/wallys/esp/hello_world/main/hello_world_main.c:157
+[0m
+[0;33m0x40030dca: memset in ROM
+[0m
+[0;33m0x4200a618: app_main at /home/wallys/esp/hello_world/main/hello_world_main.c:157
+0x4200a618: app_main at /home/wallys/esp/hello_world/main/hello_world_main.c:157
+[0m
+[0;33m0x40030dca: memset in ROM
+[0m
+[0m
