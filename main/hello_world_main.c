@@ -79,11 +79,15 @@ static void websocket_event_handler(void *handler_args, esp_event_base_t base, i
           json_obj_get_int(&jctx, "value", &blue_value);
           len = sprintf(answer, "{\"action\":\"answerchangerequest\",\"data\":{\"controllerID\":\"%s\",\"confirmed\":true,\"attribute\":\"%s\",\"value\":%d}}", controllerID, attribute, blue_value);
         } else if (strcmp(attribute, "rgb") == 0) {
-          json_obj_get_array(&jctx, "value", array_len);
-
-          json_arr_get_int(&jctx, 0, &red_value);
-          json_arr_get_int(&jctx, 1, &green_value);
-          json_arr_get_int(&jctx, 2, &blue_value);
+          json_obj_get_array(&jctx, "value", &array_len);
+          
+          if (array_len != 3) {
+            len = sprintf(answer, "{\"action\":\"answerchangerequest\",\"data\":{\"controllerID\":\"%s\",\"confirmed\":false,\"reason\":\"was expecting array of length 3\"}}", controllerID);
+          } else {
+            json_arr_get_int(&jctx, 0, &red_value);
+            json_arr_get_int(&jctx, 1, &green_value);
+            json_arr_get_int(&jctx, 2, &blue_value);
+          }
 
           json_obj_leave_array(&jctx);
         }
