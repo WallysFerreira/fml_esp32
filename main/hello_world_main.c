@@ -87,6 +87,8 @@ static void websocket_event_handler(void *handler_args, esp_event_base_t base, i
             json_arr_get_int(&jctx, 0, &red_value);
             json_arr_get_int(&jctx, 1, &green_value);
             json_arr_get_int(&jctx, 2, &blue_value);
+
+            len = sprintf(answer, "{\"action\":\"answerchangerequest\",\"data\":{\"controllerID\":\"%s\",\"confirmed\":true,\"attribute\":\"%s\",\"value\":[%d,%d,%d]}}", controllerID, attribute, red_value, green_value, blue_value);
           }
 
           json_obj_leave_array(&jctx);
