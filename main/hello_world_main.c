@@ -9,8 +9,6 @@
 
 #define SSID "Arctic Monkeys"
 #define pass "ityttmom0209"
-//#define SERVER "wss://192.168.0.102:8080/echo"
-//#define SERVER "wss://demo.piesocket.com/v3/channel_123?api_key=VCXCEuvhGcBDP7XhiJJUDvR1e1D3eiVjgZ9VRiaV&notify_self"
 #define SERVER "wss://m9sli48ocd.execute-api.us-east-2.amazonaws.com/test/?type=board&ID=ESP32C6&name=PlacaFML"
 
 esp_websocket_client_handle_t client;
@@ -48,7 +46,6 @@ static void websocket_event_handler(void *handler_args, esp_event_base_t base, i
     switch (event_id) {
     case WEBSOCKET_EVENT_CONNECTED:
       printf("WEBSOCKET_EVENT_CONNECTED\n");
-      //esp_websocket_client_send_text(client, "{\"ID\": 1, \"Name\": \"Arnott\"}", 27, portMAX_DELAY);
       break;
     case WEBSOCKET_EVENT_DISCONNECTED:
       printf("WEBSOCKET_EVENT_DISCONNECTED\n");
@@ -191,20 +188,7 @@ void app_main(void)
   esp_websocket_register_events(client, WEBSOCKET_EVENT_ANY, websocket_event_handler, (void *)client);
   esp_websocket_client_start(client);
   xTimerStart(shutdown_signal_timer, portMAX_DELAY);
-  /*
-  char data[6];
-  while (1) {
-    if (esp_websocket_client_is_connected(client)) {
-      for (int i = 0; i < 3; i++) {
-        int len = sprintf(data, "Oi %d", i);
-        printf("Sending %s\n", data);
-        esp_websocket_client_send_text(client, data, len, portMAX_DELAY);
-      }
 
-      break;
-    }
-  }
-  */
   led_strip_config_t strip_config = {
     .strip_gpio_num = GPIO_NUM_8,
     .max_leds = 1, // at least one LED on board
