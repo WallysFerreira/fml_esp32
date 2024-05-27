@@ -9,7 +9,8 @@
 
 #define SSID "Arctic Monkeys"
 #define pass "ityttmom0209"
-#define SERVER "wss://m9sli48ocd.execute-api.us-east-2.amazonaws.com/test/?type=board&ID=ESP32C6&name=PlacaFML"
+#define SERVER "wss://gdddyr9xoe.execute-api.us-east-2.amazonaws.com/test/?type=board&ID=ESP32C6&name=PlacaFML"
+
 
 esp_websocket_client_handle_t client;
 static TimerHandle_t shutdown_signal_timer;
@@ -20,6 +21,7 @@ static led_strip_handle_t led_strip;
 int red_value = 0;
 int green_value = 0;
 int blue_value = 0;
+int intensity_value = 0;
 
 static void event_handler(void* arg, esp_event_base_t event_base,
                                 int32_t event_id, void* event_data)
@@ -55,6 +57,7 @@ static void websocket_event_handler(void *handler_args, esp_event_base_t base, i
       if (data->data_len > 0) {
         printf("Received: %.*s\n", data->data_len, (char *)data->data_ptr);
 
+        int valid_message = 1;
         jparse_ctx_t jctx;
         char attribute[10];
         char controllerID[64];
@@ -89,13 +92,25 @@ static void websocket_event_handler(void *handler_args, esp_event_base_t base, i
           }
 
           json_obj_leave_array(&jctx);
+        } else if (strcmp(attribute, "power") == 0) {
+          json_obj_get_int(&jctx, "value", &intensity_value);
+          len = sprintf(answer, "{\"action\":\"answerchangerequest\",\"data\":{\"controllerID\":\"%s\",\"confirmed\":true,\"attribute\":\"%s\",\"value\":%d}}", controllerID, attribute, intensity_value);
+        } else {
+          valid_message = 0;
         }
 
-        printf("Red: %d\nGreen: %d\nBlue: %d\n", red_value, green_value, blue_value);
-        led_strip_set_pixel(led_strip, 0, red_value, green_value, blue_value);
-        led_strip_refresh(led_strip);
+        if (valid_message) {
+          float intensity_pct = (float) intensity_value / 100;
+          int final_red_val = (int) red_value * intensity_pct;
+          int final_green_val = (int) green_value * intensity_pct;
+          int final_blue_val = (int) blue_value * intensity_pct;
 
-        esp_websocket_client_send_text(client, answer, len, portMAX_DELAY);
+          printf("Intensity: %d\nRed: %d\nGreen: %d\nBlue: %d\n", intensity_value, final_red_val, final_green_val, final_blue_val);
+          led_strip_set_pixel(led_strip, 0, final_red_val, final_green_val, final_blue_val);
+          led_strip_refresh(led_strip);
+
+          esp_websocket_client_send_text(client, answer, len, portMAX_DELAY);
+        }
       }
 
       xTimerReset(shutdown_signal_timer, portMAX_DELAY);
